@@ -117,7 +117,7 @@ def Btn_С():
     lb_t0.grid(row=0,column=0)
     Temperature1 = Entry(Thermal)
     Temperature1.grid(row=3,column=0, padx=5, pady=5)
-    lb_t1 = Label(Thermal, text='Температура в конце(t °С)')
+    lb_t1 = Label(Thermal, text='Температура в конце(t1 °С)')
     lb_t1.grid(row=2,column=0)
     Temperature = Entry(Thermal)
     Temperature.grid(row=8,column=0, padx=5, pady=5)
@@ -244,6 +244,7 @@ def T25():
         print(1)
         TemperatureF = float(Temperature1.get())-float(Temperature0.get())
         print(TemperatureF)
+        messagebox.showinfo("Изменение температуры", str(-float(Temperature0.get())+float(Temperature1.get()))+'°С; dt = t1 - t0')
         k = (float(Temperature1.get())-float(Mt.get()))*(float(Temperature0.get())-float(Mt.get()))
     elif Temperature.get() != '':
         TemperatureF = float(Temperature.get())
